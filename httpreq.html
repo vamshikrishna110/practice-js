@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        let options = {
+          method: "GET",
+        };
+
+        fetch("https://gorest.co.in/public-api/users", options)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (Data) {
+            console.log(Data); // 200
+          });
+
+        let data = {
+        name: "Rahul",
+        gender: "Male",
+        email: "rahul@gmail.com",
+        status: "Active",
+      };
+
+      let options1 = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+         
+        },
+         body:JSON.stringify(data),
+      };
+
+      fetch("https://gorest.co.in/public-api/users", options1)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (jsonData) {
+          console.log(jsonData);
+        });
+      
+    </script>
+  </head>
+  <body></body>
+</html>

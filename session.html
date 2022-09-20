@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var arr = [];
+      var obj = {
+        name: "aj",
+        age: "24",
+        city: "hyderabad",
+      };
+      arr.push(obj);
+
+      sessionStorage.setItem("details", JSON.stringify(obj));
+
+     
+      console.log( sessionStorage.getItem("details"))
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

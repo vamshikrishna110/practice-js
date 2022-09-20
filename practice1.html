@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          input:read-only {
+            background-color: blue;
+          }
+          input:required {
+             background-color: yellow;
+          }
+          a:active {
+            background-color: yellow;
+          }
+          input[type=text]:enabled {
+            background: #ffff00;
+          }
+
+          input[type=text]:disabled {
+            background: #dddddd;
+          }
+    </style>
+</head>
+<body>
+    <p>A normal input element:<br><input value="hello"></p>
+
+    <p>A readonly input element:<br><input readonly value="hello"></p>
+
+    <p>An optional input element:<br><input></p>
+
+    <p>A required input element:<br><input required></p>
+
+    Country: <input type="text" disabled="disabled" value="Disneyland"> <br>
+
+    <input type="radio" checked="checked" value="male" name="gender"> Male<br>
+    <input type="radio" value="female" name="gender"> Female<br>
+    <input type="checkbox" checked="checked" value="Bike"> I have a bike<br>
+    <input type="checkbox" value="Car"> I have a car <br>
+
+    <a href="https://www.w3schools.com">W3schools.com</a><br>
+</body>
+</html>

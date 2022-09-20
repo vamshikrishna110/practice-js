@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "Underscore.js">  </script>
+    <script>
+        var cars = ["maruthi", "Nissan", "BMW"]
+        _.each(cars, function(element, index, list) {
+            var output = "Element: " + element + "Index: " + index + "List length: " + list.length;
+            console.log(output);
+        })
+        //where ooks through each value in the list, returning an array of all the 
+        // values that matches the key-value pairs listed in prorpeties
+        var people = [   
+            {name: 'vamshi', car: false}, 
+            {name: 'krishna', car: true}, 
+            {name: 'kvk', car: false}
+            ], 
+            hasCar = function (value) { 
+            return (value.car == true); 
+            }; 
+        console.log(_.where(people, hasCar)); 
+
+            //   this above code is printing everything
+            // : 
+            // {name: 'vamshi', car: false}
+           
+           
+            // {name: 'krishna', car: true}
+            // {name: 'kvk', car: false}
+
+
+        var people1 = [
+                {"name": "sakshi", "hasLong": "false"},
+                {"name": "aishwarya", "hasLong": "true"},
+                {"name": "akansha", "hasLong": "true"},
+                {"name": "preeti", "hasLong": "true"}
+            ]
+         console.log(_.where(people1, {hasLong: "true"}));
+        // {name: 'aishwarya', hasLong: 'true'}
+        // {name: 'akansha', hasLong: 'true'}
+        // {name: 'preeti', hasLong: 'true'}
+
+        //findwhere Looks through the list and returns "the first value" that matches all of the key-value pairs
+
+        //underscore is a javascript librabry that provides a  whole mess of useful functional 
+        //programming helpers without extending any buitl in objects
+
+        // map produces a new array of values by mappimg each value
+        //in the list through a transformation function(iteratee)
+
+        var map = _.map([1, 2, 3], function(num){return num * 3});
+        console.log(map); //[3, 6, 9]
+
+        //reduce reduce boils down a list of values into a single value.
+
+        var sum = _.reduce([1, 2, 3], function(memo, num){return memo + num}, 0);
+        console.log(sum);//6
+
+        //find looks through each value in list returning the "first one" that passes a truth test
+
+        var even = _.find([1, 2, 3, 4, 5, 6], function(num){return num % 2 == 0;})
+        console.log(even); //2
+
+        //filter , returning an array of "all the values" that pass a truth test
+        
+        var even1 = _.filter([1, 2, 3, 4, 5, 6], function(num){return num % 2 == 0;})
+        console.log(even1); //[2, 4, 6]
+
+        //reject Returns the values in list without the elements that the truth test (predicate) passes.
+
+        var odds = _.reject([1, 2, 3, 4, 5], function(num){return num % 2 == 0});
+        console.log(odds) //[1, 3, 5]
+        
+        //every Returns "true" if" all of the values" in the list pass the predicate truth test
+
+       var every = _.every([1, 2, 3, 4, 5], function(num){return num % 2 == 0});
+       console.log(every) //false
+
+        //some returns true if any of the values pass the test
+       var some = _.some([1, 2, 3, 4, 5], function(num){return num % 2 == 0});
+       console.log(some) // true
+
+       //contains Returns true if the value is present in the list. 
+
+       var cont = _.contains([1,2,3], 3);
+       console.log(cont) //true
+        
+       //template
+
+       var complied  = _.template("hello: <%= name %>")
+       console.log(complied({name: "john"})); //hello: john
+       
+       _.templateSettings = {
+            interpolate: /\{\{(.+?)\}\}/g
+        };
+
+       var templates = _.template("Hello {{ name1 }}!");
+       console.log(templates({name1: "Mustache"})); //Hello Mustache!
+
+    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
